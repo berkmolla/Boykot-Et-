@@ -1,0 +1,435 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C0A7086F19E9C8B3005C2FC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A7086E19E9C8B3005C2FC1 /* main.m */; };
+		C0A7087219E9C8B3005C2FC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A7087119E9C8B3005C2FC1 /* AppDelegate.m */; };
+		C0A7087519E9C8B3005C2FC1 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A7087419E9C8B3005C2FC1 /* MasterViewController.m */; };
+		C0A7087819E9C8B3005C2FC1 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A7087719E9C8B3005C2FC1 /* DetailViewController.m */; };
+		C0A7087B19E9C8B3005C2FC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A7087919E9C8B3005C2FC1 /* Main.storyboard */; };
+		C0A7087D19E9C8B3005C2FC1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A7087C19E9C8B3005C2FC1 /* Images.xcassets */; };
+		C0A7088019E9C8B3005C2FC1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0A7087E19E9C8B3005C2FC1 /* LaunchScreen.xib */; };
+		C0A7088C19E9C8B3005C2FC1 /* Boykot_Et_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A7088B19E9C8B3005C2FC1 /* Boykot_Et_Tests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C0A7088619E9C8B3005C2FC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0A7086119E9C8B3005C2FC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C0A7086819E9C8B3005C2FC1;
+			remoteInfo = "Boykot Et!";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C0A7086919E9C8B3005C2FC1 /* Boykot Et!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Boykot Et!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0A7086D19E9C8B3005C2FC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0A7086E19E9C8B3005C2FC1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C0A7087019E9C8B3005C2FC1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C0A7087119E9C8B3005C2FC1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C0A7087319E9C8B3005C2FC1 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		C0A7087419E9C8B3005C2FC1 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		C0A7087619E9C8B3005C2FC1 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		C0A7087719E9C8B3005C2FC1 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		C0A7087A19E9C8B3005C2FC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C0A7087C19E9C8B3005C2FC1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C0A7087F19E9C8B3005C2FC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		C0A7088519E9C8B3005C2FC1 /* Boykot Et!Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Boykot Et!Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0A7088A19E9C8B3005C2FC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0A7088B19E9C8B3005C2FC1 /* Boykot_Et_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Boykot_Et_Tests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C0A7086619E9C8B3005C2FC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0A7088219E9C8B3005C2FC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C0A7086019E9C8B3005C2FC1 = {
+			isa = PBXGroup;
+			children = (
+				C0A7086B19E9C8B3005C2FC1 /* Boykot Et! */,
+				C0A7088819E9C8B3005C2FC1 /* Boykot Et!Tests */,
+				C0A7086A19E9C8B3005C2FC1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C0A7086A19E9C8B3005C2FC1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C0A7086919E9C8B3005C2FC1 /* Boykot Et!.app */,
+				C0A7088519E9C8B3005C2FC1 /* Boykot Et!Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C0A7086B19E9C8B3005C2FC1 /* Boykot Et! */ = {
+			isa = PBXGroup;
+			children = (
+				C0A7087019E9C8B3005C2FC1 /* AppDelegate.h */,
+				C0A7087119E9C8B3005C2FC1 /* AppDelegate.m */,
+				C0A7087319E9C8B3005C2FC1 /* MasterViewController.h */,
+				C0A7087419E9C8B3005C2FC1 /* MasterViewController.m */,
+				C0A7087619E9C8B3005C2FC1 /* DetailViewController.h */,
+				C0A7087719E9C8B3005C2FC1 /* DetailViewController.m */,
+				C0A7087919E9C8B3005C2FC1 /* Main.storyboard */,
+				C0A7087C19E9C8B3005C2FC1 /* Images.xcassets */,
+				C0A7087E19E9C8B3005C2FC1 /* LaunchScreen.xib */,
+				C0A7086C19E9C8B3005C2FC1 /* Supporting Files */,
+			);
+			path = "Boykot Et!";
+			sourceTree = "<group>";
+		};
+		C0A7086C19E9C8B3005C2FC1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C0A7086D19E9C8B3005C2FC1 /* Info.plist */,
+				C0A7086E19E9C8B3005C2FC1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C0A7088819E9C8B3005C2FC1 /* Boykot Et!Tests */ = {
+			isa = PBXGroup;
+			children = (
+				C0A7088B19E9C8B3005C2FC1 /* Boykot_Et_Tests.m */,
+				C0A7088919E9C8B3005C2FC1 /* Supporting Files */,
+			);
+			path = "Boykot Et!Tests";
+			sourceTree = "<group>";
+		};
+		C0A7088919E9C8B3005C2FC1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C0A7088A19E9C8B3005C2FC1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C0A7086819E9C8B3005C2FC1 /* Boykot Et! */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0A7088F19E9C8B3005C2FC1 /* Build configuration list for PBXNativeTarget "Boykot Et!" */;
+			buildPhases = (
+				C0A7086519E9C8B3005C2FC1 /* Sources */,
+				C0A7086619E9C8B3005C2FC1 /* Frameworks */,
+				C0A7086719E9C8B3005C2FC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Boykot Et!";
+			productName = "Boykot Et!";
+			productReference = C0A7086919E9C8B3005C2FC1 /* Boykot Et!.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C0A7088419E9C8B3005C2FC1 /* Boykot Et!Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0A7089219E9C8B3005C2FC1 /* Build configuration list for PBXNativeTarget "Boykot Et!Tests" */;
+			buildPhases = (
+				C0A7088119E9C8B3005C2FC1 /* Sources */,
+				C0A7088219E9C8B3005C2FC1 /* Frameworks */,
+				C0A7088319E9C8B3005C2FC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C0A7088719E9C8B3005C2FC1 /* PBXTargetDependency */,
+			);
+			name = "Boykot Et!Tests";
+			productName = "Boykot Et!Tests";
+			productReference = C0A7088519E9C8B3005C2FC1 /* Boykot Et!Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C0A7086119E9C8B3005C2FC1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Berk Mollamustafaoğlu";
+				TargetAttributes = {
+					C0A7086819E9C8B3005C2FC1 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					C0A7088419E9C8B3005C2FC1 = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = C0A7086819E9C8B3005C2FC1;
+					};
+				};
+			};
+			buildConfigurationList = C0A7086419E9C8B3005C2FC1 /* Build configuration list for PBXProject "Boykot Et!" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C0A7086019E9C8B3005C2FC1;
+			productRefGroup = C0A7086A19E9C8B3005C2FC1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C0A7086819E9C8B3005C2FC1 /* Boykot Et! */,
+				C0A7088419E9C8B3005C2FC1 /* Boykot Et!Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C0A7086719E9C8B3005C2FC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0A7087B19E9C8B3005C2FC1 /* Main.storyboard in Resources */,
+				C0A7088019E9C8B3005C2FC1 /* LaunchScreen.xib in Resources */,
+				C0A7087D19E9C8B3005C2FC1 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0A7088319E9C8B3005C2FC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C0A7086519E9C8B3005C2FC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0A7087219E9C8B3005C2FC1 /* AppDelegate.m in Sources */,
+				C0A7087519E9C8B3005C2FC1 /* MasterViewController.m in Sources */,
+				C0A7086F19E9C8B3005C2FC1 /* main.m in Sources */,
+				C0A7087819E9C8B3005C2FC1 /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0A7088119E9C8B3005C2FC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0A7088C19E9C8B3005C2FC1 /* Boykot_Et_Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C0A7088719E9C8B3005C2FC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C0A7086819E9C8B3005C2FC1 /* Boykot Et! */;
+			targetProxy = C0A7088619E9C8B3005C2FC1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C0A7087919E9C8B3005C2FC1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0A7087A19E9C8B3005C2FC1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C0A7087E19E9C8B3005C2FC1 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0A7087F19E9C8B3005C2FC1 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C0A7088D19E9C8B3005C2FC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C0A7088E19E9C8B3005C2FC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C0A7089019E9C8B3005C2FC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Boykot Et!/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C0A7089119E9C8B3005C2FC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Boykot Et!/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C0A7089319E9C8B3005C2FC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Boykot Et!Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Boykot Et!.app/Boykot Et!";
+			};
+			name = Debug;
+		};
+		C0A7089419E9C8B3005C2FC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Boykot Et!Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Boykot Et!.app/Boykot Et!";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C0A7086419E9C8B3005C2FC1 /* Build configuration list for PBXProject "Boykot Et!" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0A7088D19E9C8B3005C2FC1 /* Debug */,
+				C0A7088E19E9C8B3005C2FC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0A7088F19E9C8B3005C2FC1 /* Build configuration list for PBXNativeTarget "Boykot Et!" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0A7089019E9C8B3005C2FC1 /* Debug */,
+				C0A7089119E9C8B3005C2FC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C0A7089219E9C8B3005C2FC1 /* Build configuration list for PBXNativeTarget "Boykot Et!Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0A7089319E9C8B3005C2FC1 /* Debug */,
+				C0A7089419E9C8B3005C2FC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C0A7086119E9C8B3005C2FC1 /* Project object */;
+}
