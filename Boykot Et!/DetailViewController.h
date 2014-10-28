@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Company.h"
 
 @interface DetailViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) Company *company;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
 @end
