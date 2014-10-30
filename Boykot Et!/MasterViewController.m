@@ -49,13 +49,7 @@
     self.definesPresentationContext = YES;
     
     self.title = NSLocalizedString(@"List", @"The title for the list");
-    
-    UIBarButtonItem *infoButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(goToInfoPage)];
-    self.navigationItem.leftBarButtonItem = infoButtonItem;
-    
-    
-    
-    
+
     
 }
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
@@ -84,21 +78,54 @@
 
 #pragma mark - Segues
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//        NSDate *object = self.objects[indexPath.row];
-//        DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
-//        [controller setDetailItem:object];
-//        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-//        controller.navigationItem.leftItemsSupplementBackButton = YES;
-//    }
-//}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+        Company *company = [[Company alloc] init];
+        
+        NSIndexPath *indexPath = [sender indexPathForSelectedRow];
+        
+        if (sender == self.tableView) {
+            
+            NSPredicate *predicate = [[NSPredicate alloc] init];
+            
+            if (indexPath.section == 1) {
+                predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+                    return [[evaluatedObject whichlist] isEqualToString:@"boykot"];
+                }];
+                
+            }
+            else if (indexPath.section == 0) {
+                predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+                    return [[evaluatedObject whichlist] isEqualToString:@"destek"];
+                }];
+            }
+            
+            NSArray *filteredArray = [self.companyArray filteredArrayUsingPredicate:predicate];
+            company = filteredArray[indexPath.row];
+        }
+        else {
+            company = self.searchResultsController.filteredArray[indexPath.row];
+            NSLog(@"%@", company.isim);
+        }
+        
+        DetailViewController *dvController = (DetailViewController *)[[segue destinationViewController] topViewController];
+        //DetailViewController *dvController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+        dvController.company = company;
+        
+        //[self.navigationController showDetailViewController:dvController sender:self];
+    }
+}
 
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"showDetail" sender:tableView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -172,46 +199,6 @@
     UIFont *font = [UIFont fontWithName:@"ArialHebrew-Bold" size:userFontSize];
     
     return font;
-    
-}
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    Company *company = [[Company alloc] init];
-    
-    
-    if (tableView == self.tableView) {
-    
-        NSPredicate *predicate = [[NSPredicate alloc] init];
-        
-        if (indexPath.section == 1) {
-        predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
-            return [[evaluatedObject whichlist] isEqualToString:@"boykot"];
-        }];
-        
-        }
-        else if (indexPath.section == 0) {
-        predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
-            return [[evaluatedObject whichlist] isEqualToString:@"destek"];
-        }];
-        }
-        
-        NSArray *filteredArray = [self.companyArray filteredArrayUsingPredicate:predicate];
-        company = filteredArray[indexPath.row];
-    }
-    else {
-        company = self.searchResultsController.filteredArray[indexPath.row];
-        NSLog(@"%@", company.isim);
-    }
-
-    DetailViewController *dvController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
-    dvController.company = company;
-    
-    [self.navigationController showDetailViewController:dvController sender:self];
-    
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
     
 }
 

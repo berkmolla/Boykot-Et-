@@ -23,11 +23,10 @@
     navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
 
     splitViewController.delegate = self;
+    splitViewController.restorationIdentifier = NSStringFromClass([splitViewController class]);
     
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
         splitViewController.preferredDisplayMode = UISplitViewControllerDisplayModeAllVisible;
-        
-
     }
     
     return YES;
@@ -68,5 +67,16 @@
     } else {
         return NO;
     }
+}
+- (BOOL)application:(UIApplication *)application
+shouldSaveApplicationState:(NSCoder *)coder
+{
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application
+shouldRestoreApplicationState:(NSCoder *)coder
+{
+    return YES;
 }
 @end

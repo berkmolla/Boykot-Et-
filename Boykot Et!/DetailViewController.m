@@ -43,12 +43,27 @@
         else
             self.view.backgroundColor = [UIColor greenColor];
         
-        [self setFontsandLabels];
+        UIColor * color = [UIColor colorWithRed:255/255.0f green:248/255.0f blue:192/255.0f alpha:1.0f];
+        UIView *labelBackgroundView = [self.view.subviews objectAtIndex:0];
+        labelBackgroundView.backgroundColor = color;
+        //labelBackgroundView.clipsToBounds = YES;
         
+        
+        [self setFontsandLabels];
+        self.title = NSLocalizedString(@"Company Details", @"Company details title");
         
     }
     
-    self.title = NSLocalizedString(@"Company Details", @"Company details title");
+    UIButton *infoButtonItem = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    [infoButtonItem addTarget:self action:@selector(goToInfoPage) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButtonItem];
+    
+    
+}
+-(void)goToInfoPage
+{
+    [self performSegueWithIdentifier:@"showInfo" sender:self];
+
 }
 -(UIFont *)changeFontForTitleLabels
 {
@@ -106,7 +121,10 @@
     
     [self.reason setLineBreakMode:NSLineBreakByWordWrapping];
     [self.reason setNumberOfLines:0];
-    [self.reason setPreferredMaxLayoutWidth:200];
+    [self.reason setAdjustsFontSizeToFitWidth:YES];
+    [self.reason setMinimumScaleFactor:0.5];
+    //[self.reason setPreferredMaxLayoutWidth:200];
+    
 }
 
 @end

@@ -22,6 +22,7 @@
 		C0A7089B19E9CEA7005C2FC1 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A7089A19E9CEA7005C2FC1 /* Company.m */; };
 		C0A7089E19E9D378005C2FC1 /* CompanyStore.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A7089D19E9D378005C2FC1 /* CompanyStore.m */; };
 		C0D6855719FDB21E00ECC543 /* CompanyDetails.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0D6855619FDB21E00ECC543 /* CompanyDetails.xib */; };
+		C0D767DF1A004C9700A95AFD /* InfoPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D767DE1A004C9700A95AFD /* InfoPageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		C0A7089C19E9D378005C2FC1 /* CompanyStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyStore.h; sourceTree = "<group>"; };
 		C0A7089D19E9D378005C2FC1 /* CompanyStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyStore.m; sourceTree = "<group>"; };
 		C0D6855619FDB21E00ECC543 /* CompanyDetails.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompanyDetails.xib; sourceTree = "<group>"; };
+		C0D767DD1A004C9700A95AFD /* InfoPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoPageViewController.h; sourceTree = "<group>"; };
+		C0D767DE1A004C9700A95AFD /* InfoPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoPageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 				C00CBCDB19FD602D006056A2 /* SearchResultsTableViewController.m */,
 				C0A7087619E9C8B3005C2FC1 /* DetailViewController.h */,
 				C0A7087719E9C8B3005C2FC1 /* DetailViewController.m */,
+				C0D767DD1A004C9700A95AFD /* InfoPageViewController.h */,
+				C0D767DE1A004C9700A95AFD /* InfoPageViewController.m */,
 				C0D6855619FDB21E00ECC543 /* CompanyDetails.xib */,
 				C0A7087919E9C8B3005C2FC1 /* Main.storyboard */,
 				C0A7087C19E9C8B3005C2FC1 /* Images.xcassets */,
@@ -259,6 +264,7 @@
 				C0A7087219E9C8B3005C2FC1 /* AppDelegate.m in Sources */,
 				C0A7089B19E9CEA7005C2FC1 /* Company.m in Sources */,
 				C0A7087519E9C8B3005C2FC1 /* MasterViewController.m in Sources */,
+				C0D767DF1A004C9700A95AFD /* InfoPageViewController.m in Sources */,
 				C0A7086F19E9C8B3005C2FC1 /* main.m in Sources */,
 				C00CBCDC19FD602D006056A2 /* SearchResultsTableViewController.m in Sources */,
 				C0A7087819E9C8B3005C2FC1 /* DetailViewController.m in Sources */,
