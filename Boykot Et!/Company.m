@@ -21,8 +21,7 @@
     [aCoder encodeObject:self.isim forKey:@"isim"];
     [aCoder encodeObject:self.gerekce forKey:@"gerekce"];
     [aCoder encodeObject:self.whichlist forKey:@"whichlist"];
-
-    
+    [aCoder encodeObject:self.sorumluluk forKey:@"sorumluluk"];
 }
 
 
@@ -36,6 +35,7 @@
         _isim = [aDecoder decodeObjectForKey:@"isim"];
         _gerekce = [aDecoder decodeObjectForKey:@"gerekce"];
         _whichlist = [aDecoder decodeObjectForKey:@"whichlist"];
+        _sorumluluk = [aDecoder decodeObjectForKey:@"sorumluluk"];
     }
     return self;
 }

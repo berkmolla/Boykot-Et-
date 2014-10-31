@@ -8,7 +8,7 @@
         <!--Detail View Controller-->
         <scene sceneID="z2N-95-mqa">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="TIE-cV-2YE" customClass="DetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TIE-cV-2YE" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f6x-0Z-Dhh"/>
                         <viewControllerLayoutGuide type="bottom" id="fIi-rs-QxI"/>
@@ -86,14 +86,14 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="200" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVq-Sq-um4">
-                                        <rect key="frame" x="84" y="112" width="424" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="200" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epk-Sq-fTj">
+                                        <rect key="frame" x="84" y="153" width="424" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="200" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epk-Sq-fTj">
-                                        <rect key="frame" x="84" y="153" width="424" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="200" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVq-Sq-um4">
+                                        <rect key="frame" x="84" y="112" width="424" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -177,7 +177,7 @@
         <!--Info Page View Controller-->
         <scene sceneID="Ha7-6G-Nno">
             <objects>
-                <viewController id="3yj-wI-wNE" customClass="InfoPageViewController" sceneMemberID="viewController">
+                <viewController restorationIdentifier="InfoViewController" id="3yj-wI-wNE" customClass="InfoPageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4Eu-Bw-HzU"/>
                         <viewControllerLayoutGuide type="bottom" id="eLz-R9-qzq"/>
@@ -236,8 +236,8 @@
         <!--Master View Controller-->
         <scene sceneID="h4T-en-MnC">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="uxe-PB-wDm" userLabel="Master View Controller" customClass="MasterViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Z31-UN-sM2">
+                <tableViewController storyboardIdentifier="MasterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" clearsSelectionOnViewWillAppear="NO" id="uxe-PB-wDm" userLabel="Master View Controller" customClass="MasterViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MasterViewControllerTableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Z31-UN-sM2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -266,7 +266,7 @@
         <!--Navigation Controller-->
         <scene sceneID="z7K-oc-qZu">
             <objects>
-                <navigationController id="DBk-9R-73I" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="nav1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DBk-9R-73I" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fWL-Mn-DeV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -282,7 +282,7 @@
         <!--Split View Controller-->
         <scene sceneID="adl-hS-TWi">
             <objects>
-                <splitViewController id="ZLu-bW-eTY" sceneMemberID="viewController">
+                <splitViewController storyboardIdentifier="splitViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZLu-bW-eTY" sceneMemberID="viewController">
                     <connections>
                         <segue destination="DBk-9R-73I" kind="relationship" relationship="masterViewController" id="Oll-g0-huF"/>
                         <segue destination="svG-N0-p2y" kind="relationship" relationship="detailViewController" id="q5g-Ac-mEH"/>
@@ -295,7 +295,7 @@
         <!--Navigation Controller-->
         <scene sceneID="fyG-gp-2aU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="svG-N0-p2y" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="nav2" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="svG-N0-p2y" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="y2X-gX-Ul3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

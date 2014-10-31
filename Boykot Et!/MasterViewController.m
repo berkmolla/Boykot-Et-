@@ -12,7 +12,7 @@
 #import "Company.h"
 #import "SearchResultsTableViewController.h"
 
-@interface MasterViewController () <UISearchResultsUpdating, UISearchControllerDelegate, UISearchBarDelegate>
+@interface MasterViewController () <UISearchResultsUpdating, UISearchControllerDelegate, UISearchBarDelegate, UIViewControllerRestoration>
 
 @property (nonatomic, strong) NSArray *companyArray;
 
@@ -20,12 +20,18 @@
 @property (nonatomic, strong) SearchResultsTableViewController *searchResultsController;
 @property (nonatomic, strong) NSMutableArray *searchArray;
 
+@property BOOL searchControllerWasActive;
+@property BOOL searchControllerSearchFieldWasFirstResponder;
+
+
 @end
 
 @implementation MasterViewController
 
 - (void)awakeFromNib {
+    
     [super awakeFromNib];
+    
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         self.clearsSelectionOnViewWillAppear = NO;
         self.preferredContentSize = CGSizeMake(320.0, 600.0);
@@ -33,6 +39,7 @@
     
     self.companyArray = [[CompanyStore sharedStore] allItems];
     self.searchResultsController = [[SearchResultsTableViewController alloc] init];
+    self.searchResultsController.tableView.restorationIdentifier = @"SearchResultsTableView";
 
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.searchResultsController];
     
@@ -49,6 +56,9 @@
     self.definesPresentationContext = YES;
     
     self.title = NSLocalizedString(@"List", @"The title for the list");
+  
+    self.searchController.restorationIdentifier = NSStringFromClass([self.searchController class]);
+    self.searchController.searchBar.restorationIdentifier = NSStringFromClass([self.searchController.searchBar.restorationIdentifier class]);
 
     
 }
@@ -60,6 +70,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+}
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    // restore the searchController's active state
+    if (self.searchControllerWasActive) {
+        self.searchController.active = self.searchControllerWasActive;
+        _searchControllerWasActive = NO;
+        
+        if (self.searchControllerSearchFieldWasFirstResponder) {
+            [self.searchController.searchBar becomeFirstResponder];
+            _searchControllerSearchFieldWasFirstResponder = NO;
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -236,6 +260,50 @@
     self.searchResultsController.filteredArray = searchResults;
     
     [self.searchResultsController.tableView reloadData];
+}
+
+#pragma mark - state restoration
+static NSString *SearchControllerIsActiveKey = @"SearchControllerIsActiveKey";
+static NSString *SearchBarTextKey = @"SearchBarTextKey";
+static NSString *SearchBarIsFirstResponderKey = @"SearchBarIsFirstResponderKey";
+
+-(void)encodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    UISearchController *searchController = self.searchController;
+    
+    // encode the search controller's active state
+    BOOL searchDisplayControllerIsActive = searchController.isActive;
+    [coder encodeBool:searchDisplayControllerIsActive forKey:SearchControllerIsActiveKey];
+    
+    // encode the first responser status
+    if (searchDisplayControllerIsActive) {
+        [coder encodeBool:[searchController.searchBar isFirstResponder] forKey:SearchBarIsFirstResponderKey];
+    }
+    
+    // encode the search bar text
+    [coder encodeObject:searchController.searchBar.text forKey:SearchBarTextKey];
+}
+-(void)decodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    // restore the active state:
+    // we can't make the searchController active here since it's not part of the view
+    // hierarchy yet, instead we do it in viewWillAppear
+    //
+    _searchControllerWasActive = [coder decodeBoolForKey:SearchControllerIsActiveKey];
+    
+    // restore the first responder status:
+    // we can't make the searchController first responder here since it's not part of the view
+    // hierarchy yet, instead we do it in viewWillAppear
+    //
+    _searchControllerSearchFieldWasFirstResponder = [coder decodeBoolForKey:SearchBarIsFirstResponderKey];
+    
+    // restore the text in the search field
+    self.searchController.searchBar.text = [coder decodeObjectForKey:SearchBarTextKey];
+}
++ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)path
+                                                            coder:(NSCoder *)coder
+{
+    return [[self alloc] init];
 }
 
 
