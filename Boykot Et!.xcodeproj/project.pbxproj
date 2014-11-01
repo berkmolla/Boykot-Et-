@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		C00CBCDC19FD602D006056A2 /* SearchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00CBCDB19FD602D006056A2 /* SearchResultsTableViewController.m */; };
+		C097B83D1A04371A0034F3BA /* boykottr.xml in Resources */ = {isa = PBXBuildFile; fileRef = C097B83B1A04371A0034F3BA /* boykottr.xml */; };
+		C097B83E1A04371A0034F3BA /* destektr.xml in Resources */ = {isa = PBXBuildFile; fileRef = C097B83C1A04371A0034F3BA /* destektr.xml */; };
+		C097B8411A043C870034F3BA /* Localizer.m in Sources */ = {isa = PBXBuildFile; fileRef = C097B8401A043C870034F3BA /* Localizer.m */; };
 		C09F377D19FAF78200704DEE /* DataCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = C09F377C19FAF78200704DEE /* DataCollector.m */; };
 		C0A7086F19E9C8B3005C2FC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A7086E19E9C8B3005C2FC1 /* main.m */; };
 		C0A7087219E9C8B3005C2FC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A7087119E9C8B3005C2FC1 /* AppDelegate.m */; };
@@ -21,6 +24,9 @@
 		C0A7089819E9C92A005C2FC1 /* destek.xml in Resources */ = {isa = PBXBuildFile; fileRef = C0A7089619E9C92A005C2FC1 /* destek.xml */; };
 		C0A7089B19E9CEA7005C2FC1 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A7089A19E9CEA7005C2FC1 /* Company.m */; };
 		C0A7089E19E9D378005C2FC1 /* CompanyStore.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A7089D19E9D378005C2FC1 /* CompanyStore.m */; };
+		C0C536DB1A03CB14000BCCEB /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C0C536DA1A03CB14000BCCEB /* Settings.bundle */; };
+		C0C536DD1A03FF16000BCCEB /* CompanyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0C536DC1A03FF16000BCCEB /* CompanyCell.xib */; };
+		C0C536E01A040019000BCCEB /* CompanyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C536DF1A040019000BCCEB /* CompanyCell.m */; };
 		C0D6855719FDB21E00ECC543 /* CompanyDetails.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0D6855619FDB21E00ECC543 /* CompanyDetails.xib */; };
 		C0D767DF1A004C9700A95AFD /* InfoPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D767DE1A004C9700A95AFD /* InfoPageViewController.m */; };
 /* End PBXBuildFile section */
@@ -38,6 +44,10 @@
 /* Begin PBXFileReference section */
 		C00CBCDA19FD602D006056A2 /* SearchResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsTableViewController.h; sourceTree = "<group>"; };
 		C00CBCDB19FD602D006056A2 /* SearchResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsTableViewController.m; sourceTree = "<group>"; };
+		C097B83B1A04371A0034F3BA /* boykottr.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = boykottr.xml; sourceTree = "<group>"; };
+		C097B83C1A04371A0034F3BA /* destektr.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = destektr.xml; sourceTree = "<group>"; };
+		C097B83F1A043C860034F3BA /* Localizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Localizer.h; sourceTree = "<group>"; };
+		C097B8401A043C870034F3BA /* Localizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Localizer.m; sourceTree = "<group>"; };
 		C09F377B19FAF78200704DEE /* DataCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCollector.h; sourceTree = "<group>"; };
 		C09F377C19FAF78200704DEE /* DataCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCollector.m; sourceTree = "<group>"; };
 		C0A7086919E9C8B3005C2FC1 /* Boykot Et!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Boykot Et!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +71,10 @@
 		C0A7089A19E9CEA7005C2FC1 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
 		C0A7089C19E9D378005C2FC1 /* CompanyStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyStore.h; sourceTree = "<group>"; };
 		C0A7089D19E9D378005C2FC1 /* CompanyStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyStore.m; sourceTree = "<group>"; };
+		C0C536DA1A03CB14000BCCEB /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = "Boykot Et!/Settings.bundle"; sourceTree = "<group>"; };
+		C0C536DC1A03FF16000BCCEB /* CompanyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompanyCell.xib; sourceTree = "<group>"; };
+		C0C536DE1A040019000BCCEB /* CompanyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyCell.h; sourceTree = "<group>"; };
+		C0C536DF1A040019000BCCEB /* CompanyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyCell.m; sourceTree = "<group>"; };
 		C0D6855619FDB21E00ECC543 /* CompanyDetails.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompanyDetails.xib; sourceTree = "<group>"; };
 		C0D767DD1A004C9700A95AFD /* InfoPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoPageViewController.h; sourceTree = "<group>"; };
 		C0D767DE1A004C9700A95AFD /* InfoPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoPageViewController.m; sourceTree = "<group>"; };
@@ -87,6 +101,7 @@
 		C0A7086019E9C8B3005C2FC1 = {
 			isa = PBXGroup;
 			children = (
+				C0C536DA1A03CB14000BCCEB /* Settings.bundle */,
 				C0A7086B19E9C8B3005C2FC1 /* Boykot Et! */,
 				C0A7088819E9C8B3005C2FC1 /* Boykot Et!Tests */,
 				C0A7086A19E9C8B3005C2FC1 /* Products */,
@@ -115,12 +130,17 @@
 				C0A7087119E9C8B3005C2FC1 /* AppDelegate.m */,
 				C0A7087319E9C8B3005C2FC1 /* MasterViewController.h */,
 				C0A7087419E9C8B3005C2FC1 /* MasterViewController.m */,
+				C097B83F1A043C860034F3BA /* Localizer.h */,
+				C097B8401A043C870034F3BA /* Localizer.m */,
 				C00CBCDA19FD602D006056A2 /* SearchResultsTableViewController.h */,
 				C00CBCDB19FD602D006056A2 /* SearchResultsTableViewController.m */,
 				C0A7087619E9C8B3005C2FC1 /* DetailViewController.h */,
 				C0A7087719E9C8B3005C2FC1 /* DetailViewController.m */,
 				C0D767DD1A004C9700A95AFD /* InfoPageViewController.h */,
 				C0D767DE1A004C9700A95AFD /* InfoPageViewController.m */,
+				C0C536DE1A040019000BCCEB /* CompanyCell.h */,
+				C0C536DF1A040019000BCCEB /* CompanyCell.m */,
+				C0C536DC1A03FF16000BCCEB /* CompanyCell.xib */,
 				C0D6855619FDB21E00ECC543 /* CompanyDetails.xib */,
 				C0A7087919E9C8B3005C2FC1 /* Main.storyboard */,
 				C0A7087C19E9C8B3005C2FC1 /* Images.xcassets */,
@@ -133,6 +153,8 @@
 		C0A7086C19E9C8B3005C2FC1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C097B83B1A04371A0034F3BA /* boykottr.xml */,
+				C097B83C1A04371A0034F3BA /* destektr.xml */,
 				C0A7089519E9C92A005C2FC1 /* boykot.xml */,
 				C0A7089619E9C92A005C2FC1 /* destek.xml */,
 				C0A7086D19E9C8B3005C2FC1 /* Info.plist */,
@@ -238,12 +260,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C097B83D1A04371A0034F3BA /* boykottr.xml in Resources */,
 				C0A7087B19E9C8B3005C2FC1 /* Main.storyboard in Resources */,
 				C0A7089719E9C92A005C2FC1 /* boykot.xml in Resources */,
+				C097B83E1A04371A0034F3BA /* destektr.xml in Resources */,
 				C0A7089819E9C92A005C2FC1 /* destek.xml in Resources */,
 				C0A7088019E9C8B3005C2FC1 /* LaunchScreen.xib in Resources */,
 				C0D6855719FDB21E00ECC543 /* CompanyDetails.xib in Resources */,
 				C0A7087D19E9C8B3005C2FC1 /* Images.xcassets in Resources */,
+				C0C536DB1A03CB14000BCCEB /* Settings.bundle in Resources */,
+				C0C536DD1A03FF16000BCCEB /* CompanyCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +288,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0A7087219E9C8B3005C2FC1 /* AppDelegate.m in Sources */,
+				C0C536E01A040019000BCCEB /* CompanyCell.m in Sources */,
 				C0A7089B19E9CEA7005C2FC1 /* Company.m in Sources */,
 				C0A7087519E9C8B3005C2FC1 /* MasterViewController.m in Sources */,
 				C0D767DF1A004C9700A95AFD /* InfoPageViewController.m in Sources */,
+				C097B8411A043C870034F3BA /* Localizer.m in Sources */,
 				C0A7086F19E9C8B3005C2FC1 /* main.m in Sources */,
 				C00CBCDC19FD602D006056A2 /* SearchResultsTableViewController.m in Sources */,
 				C0A7087819E9C8B3005C2FC1 /* DetailViewController.m in Sources */,

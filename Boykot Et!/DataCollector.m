@@ -8,6 +8,8 @@
 
 #import "DataCollector.h"
 #import "Company.h"
+#import "AppDelegate.h"
+
 @interface DataCollector () <NSXMLParserDelegate>
 
 @property (nonatomic, copy) NSString *whichList;
@@ -79,9 +81,6 @@
 
     }
     
-
-    
-    
 }
 
 -(void)parserDidStartDocument:(NSXMLParser *)parser{
@@ -91,10 +90,17 @@
 -(NSArray *)parseXMLFile:(NSString *)list
 {
     self.whichList = list;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *language = [defaults stringForKey:LanguagePreferenceKey];
 
     if ([self.whichList isEqualToString:@"boykot"]) {
         NSURL *url = [[NSURL alloc] init];
-        url = [[NSBundle mainBundle] URLForResource:@"boykot" withExtension:@"xml"];
+        
+        if ([language isEqualToString:@"en"])
+            url = [[NSBundle mainBundle] URLForResource:@"boykot" withExtension:@"xml"];
+        else if ([language isEqualToString:@"tr"])
+            url = [[NSBundle mainBundle] URLForResource:@"boykottr" withExtension:@"xml"];
         
         NSData *data = [[NSData alloc] initWithContentsOfURL:url];
         
@@ -103,7 +109,11 @@
     }
     if ([self.whichList isEqualToString:@"destek"]) {
         NSURL *url = [[NSURL alloc] init];
-        url = [[NSBundle mainBundle] URLForResource:@"destek" withExtension:@"xml"];
+        
+        if ([language isEqualToString:@"en"])
+            url = [[NSBundle mainBundle] URLForResource:@"destek" withExtension:@"xml"];
+        else if ([language isEqualToString:@"tr"])
+            url = [[NSBundle mainBundle] URLForResource:@"destektr" withExtension:@"xml"];
         
         NSData *data = [[NSData alloc] initWithContentsOfURL:url];
         parser = [[NSXMLParser alloc] initWithData:data];

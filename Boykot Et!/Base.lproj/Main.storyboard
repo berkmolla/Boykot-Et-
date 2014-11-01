@@ -186,14 +186,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVa-NB-EJG">
-                                <rect key="frame" x="279" y="94" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="NVa-NB-EJG">
+                                <rect key="frame" x="284" y="54" width="33" height="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrX-FC-5mz">
-                                <rect key="frame" x="261" y="134" width="78" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntd-vv-lF9">
+                                <rect key="frame" x="26" y="126" width="538" height="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8O-BF-vwL">
+                                <rect key="frame" x="36" y="151" width="518" height="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrX-FC-5mz">
+                                <rect key="frame" x="261" y="81" width="78" height="30"/>
                                 <state key="normal" title="boykotet.tk">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -201,25 +213,89 @@
                                     <action selector="openBoykotEt:" destination="3yj-wI-wNE" eventType="touchUpInside" id="qko-0Q-on9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntd-vv-lF9">
-                                <rect key="frame" x="36" y="193" width="528" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ntd-vv-lF9" firstAttribute="top" secondItem="OrX-FC-5mz" secondAttribute="bottom" constant="29" id="0Wg-a7-Wbg"/>
-                            <constraint firstAttribute="centerX" secondItem="NVa-NB-EJG" secondAttribute="centerX" id="7SW-em-Sjs"/>
-                            <constraint firstItem="NVa-NB-EJG" firstAttribute="top" secondItem="4Eu-Bw-HzU" secondAttribute="bottom" constant="50" id="8xT-TR-8XV"/>
-                            <constraint firstItem="OrX-FC-5mz" firstAttribute="top" secondItem="NVa-NB-EJG" secondAttribute="bottom" constant="19" id="Rvh-op-Ayz"/>
-                            <constraint firstAttribute="centerX" secondItem="OrX-FC-5mz" secondAttribute="centerX" id="YXq-6Q-3dB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ntd-vv-lF9" secondAttribute="trailing" constant="20" id="fOy-u2-2Ml"/>
-                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="NVa-NB-EJG" secondAttribute="trailing" constant="20" id="kda-N4-ISF"/>
-                            <constraint firstItem="ntd-vv-lF9" firstAttribute="leading" secondItem="vkc-a8-rcF" secondAttribute="leadingMargin" constant="20" id="sSd-Ik-1HI"/>
-                            <constraint firstItem="NVa-NB-EJG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vkc-a8-rcF" secondAttribute="leadingMargin" constant="20" id="ywm-PK-Sla"/>
+                            <constraint firstItem="X8O-BF-vwL" firstAttribute="leading" secondItem="vkc-a8-rcF" secondAttribute="leadingMargin" constant="10" id="030-Ay-6Wg"/>
+                            <constraint firstAttribute="centerX" secondItem="ntd-vv-lF9" secondAttribute="centerX" id="73T-vp-JVv"/>
+                            <constraint firstItem="NVa-NB-EJG" firstAttribute="leading" secondItem="vkc-a8-rcF" secondAttribute="leadingMargin" constant="10" id="7Z0-MZ-IxX"/>
+                            <constraint firstItem="X8O-BF-vwL" firstAttribute="top" secondItem="ntd-vv-lF9" secondAttribute="bottom" constant="30" id="7ro-tC-gZu"/>
+                            <constraint firstItem="NVa-NB-EJG" firstAttribute="top" secondItem="4Eu-Bw-HzU" secondAttribute="bottom" constant="10" id="BHq-DH-Mx9"/>
+                            <constraint firstItem="NVa-NB-EJG" firstAttribute="top" secondItem="4Eu-Bw-HzU" secondAttribute="bottom" constant="50" id="G5C-HH-YFo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NVa-NB-EJG" secondAttribute="trailing" constant="20" id="IQm-Fa-Bgb"/>
+                            <constraint firstItem="OrX-FC-5mz" firstAttribute="top" secondItem="NVa-NB-EJG" secondAttribute="bottom" constant="20" id="JgC-zM-vvh"/>
+                            <constraint firstItem="ntd-vv-lF9" firstAttribute="leading" secondItem="vkc-a8-rcF" secondAttribute="leadingMargin" constant="20" id="L75-Cx-YeY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="X8O-BF-vwL" secondAttribute="trailing" constant="20" id="M87-6o-8rB"/>
+                            <constraint firstItem="NVa-NB-EJG" firstAttribute="leading" secondItem="vkc-a8-rcF" secondAttribute="leadingMargin" constant="20" id="MKx-Kt-yvx"/>
+                            <constraint firstItem="ntd-vv-lF9" firstAttribute="leading" secondItem="vkc-a8-rcF" secondAttribute="leadingMargin" constant="10" id="PD9-S3-Tch"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="X8O-BF-vwL" secondAttribute="trailing" constant="10" id="SAW-xf-i6V"/>
+                            <constraint firstItem="ntd-vv-lF9" firstAttribute="top" secondItem="OrX-FC-5mz" secondAttribute="bottom" constant="16" id="SBr-te-L0u"/>
+                            <constraint firstAttribute="centerX" secondItem="X8O-BF-vwL" secondAttribute="centerX" id="UeV-5l-Blx"/>
+                            <constraint firstAttribute="centerX" secondItem="NVa-NB-EJG" secondAttribute="centerX" id="WfM-UW-e9M"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ntd-vv-lF9" secondAttribute="trailing" constant="20" id="X53-fr-com"/>
+                            <constraint firstAttribute="centerX" secondItem="OrX-FC-5mz" secondAttribute="centerX" id="cmr-Y3-ck8"/>
+                            <constraint firstItem="X8O-BF-vwL" firstAttribute="leading" secondItem="vkc-a8-rcF" secondAttribute="leadingMargin" constant="20" id="iCs-HJ-LDQ"/>
+                            <constraint firstItem="eLz-R9-qzq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="X8O-BF-vwL" secondAttribute="bottom" constant="20" id="ipt-oZ-fVT"/>
+                            <constraint firstItem="X8O-BF-vwL" firstAttribute="top" secondItem="ntd-vv-lF9" secondAttribute="bottom" constant="8" id="j7o-R7-784"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NVa-NB-EJG" secondAttribute="trailing" constant="10" id="mrE-0e-LXh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ntd-vv-lF9" secondAttribute="trailing" constant="10" id="neq-qf-GBO"/>
+                            <constraint firstItem="ntd-vv-lF9" firstAttribute="top" secondItem="OrX-FC-5mz" secondAttribute="bottom" constant="15" id="sOY-5d-Z2w"/>
+                            <constraint firstItem="OrX-FC-5mz" firstAttribute="top" secondItem="NVa-NB-EJG" secondAttribute="bottom" constant="5" id="skG-4Q-VVj"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="L75-Cx-YeY"/>
+                                <exclude reference="PD9-S3-Tch"/>
+                                <exclude reference="SBr-te-L0u"/>
+                                <exclude reference="X53-fr-com"/>
+                                <exclude reference="neq-qf-GBO"/>
+                                <exclude reference="sOY-5d-Z2w"/>
+                                <exclude reference="030-Ay-6Wg"/>
+                                <exclude reference="7ro-tC-gZu"/>
+                                <exclude reference="M87-6o-8rB"/>
+                                <exclude reference="SAW-xf-i6V"/>
+                                <exclude reference="iCs-HJ-LDQ"/>
+                                <exclude reference="j7o-R7-784"/>
+                                <exclude reference="JgC-zM-vvh"/>
+                                <exclude reference="skG-4Q-VVj"/>
+                                <exclude reference="7Z0-MZ-IxX"/>
+                                <exclude reference="BHq-DH-Mx9"/>
+                                <exclude reference="G5C-HH-YFo"/>
+                                <exclude reference="IQm-Fa-Bgb"/>
+                                <exclude reference="MKx-Kt-yvx"/>
+                                <exclude reference="mrE-0e-LXh"/>
+                                <exclude reference="ipt-oZ-fVT"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="PD9-S3-Tch"/>
+                                <include reference="neq-qf-GBO"/>
+                                <include reference="sOY-5d-Z2w"/>
+                                <include reference="030-Ay-6Wg"/>
+                                <include reference="SAW-xf-i6V"/>
+                                <include reference="j7o-R7-784"/>
+                                <include reference="skG-4Q-VVj"/>
+                                <include reference="7Z0-MZ-IxX"/>
+                                <include reference="BHq-DH-Mx9"/>
+                                <include reference="mrE-0e-LXh"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="L75-Cx-YeY"/>
+                                <include reference="SBr-te-L0u"/>
+                                <include reference="X53-fr-com"/>
+                                <include reference="7ro-tC-gZu"/>
+                                <include reference="M87-6o-8rB"/>
+                                <include reference="iCs-HJ-LDQ"/>
+                                <include reference="JgC-zM-vvh"/>
+                                <include reference="G5C-HH-YFo"/>
+                                <include reference="IQm-Fa-Bgb"/>
+                                <include reference="MKx-Kt-yvx"/>
+                                <include reference="ipt-oZ-fVT"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="r8T-5M-1O6">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="xTs-ej-Hvi">
@@ -228,6 +304,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="infoLabel1" destination="ntd-vv-lF9" id="Xel-Qi-YxV"/>
+                        <outlet property="infoLabel2" destination="X8O-BF-vwL" id="JgF-iB-Xdc"/>
+                        <outlet property="infoLabel3" destination="NVa-NB-EJG" id="8PS-QF-opq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cyk-YC-6eg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -330,6 +411,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="q5g-Ac-mEH"/>
+        <segue reference="SJL-En-2oP"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -13,5 +13,7 @@
 @property (nonatomic, readonly) NSArray *allItems;
 
 +(instancetype)sharedStore;
+-(BOOL)saveChanges;
+-(void)doParsing;
 
 @end

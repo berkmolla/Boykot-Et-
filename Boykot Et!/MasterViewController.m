@@ -11,6 +11,8 @@
 #import "CompanyStore.h"
 #import "Company.h"
 #import "SearchResultsTableViewController.h"
+#import "CompanyCell.h"
+#import "Localizer.h"
 
 @interface MasterViewController () <UISearchResultsUpdating, UISearchControllerDelegate, UISearchBarDelegate, UIViewControllerRestoration>
 
@@ -55,20 +57,48 @@
     
     self.definesPresentationContext = YES;
     
-    self.title = NSLocalizedString(@"List", @"The title for the list");
-  
+    
     self.searchController.restorationIdentifier = NSStringFromClass([self.searchController class]);
     self.searchController.searchBar.restorationIdentifier = NSStringFromClass([self.searchController.searchBar.restorationIdentifier class]);
+    
+    [self setTitlesAndLabelsBasedOnLanguage];
+    
+    // Change user defaults notification
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self selector:@selector(reloadInterfaceAfterLanguageChange) name:NSUserDefaultsDidChangeNotification object:nil];
 
     
 }
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    [searchBar resignFirstResponder];
+
+-(void)setTitlesAndLabelsBasedOnLanguage
+{
+    NSString *language = [[Localizer sharedInstance] currentLanguage];
+    
+    if ([language isEqualToString:@"tr"])
+        self.title = @"Şirket listesi";
+    else if ([language isEqualToString:@"en"])
+        self.title = @"Company list";
 }
+
+-(void)reloadInterfaceAfterLanguageChange
+{
+    
+    NSLog(@"language chaned");
+    [self setTitlesAndLabelsBasedOnLanguage];
+    [self.tableView reloadData];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    // Table view Cell
+    UINib *nib = [UINib nibWithNibName:@"CompanyCell" bundle:nil];
+    
+    // Register the nib
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"Cell"];
+    
+   
     
 }
 - (void)viewDidAppear:(BOOL)animated {
@@ -90,15 +120,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-//- (void)insertNewObject:(id)sender {
-//    if (!self.objects) {
-//        self.objects = [[NSMutableArray alloc] init];
-//    }
-//    [self.objects insertObject:[NSDate date] atIndex:0];
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-//    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-//}
 
 #pragma mark - Segues
 
@@ -181,16 +202,28 @@
     NSString *title = [[NSString alloc] init];
     
     if (section == 1) {
-        title = NSLocalizedString(@"Boykot listesi", @"The header title for the boykot list");
+        
+        NSString *language = [[Localizer sharedInstance] currentLanguage];
+        
+        if ([language isEqualToString:@"en"])
+            title = @"Boycott list";
+        else if ([language isEqualToString:@"tr"])
+            title = @"Boykot listesi";
     }
     if (section == 0) {
-        title = NSLocalizedString(@"Destek listesi", @"The header title for the destek list");
+        
+        NSString *language = [[Localizer sharedInstance] currentLanguage];
+        
+        if ([language isEqualToString:@"en"])
+            title = @"Support list";
+        else if ([language isEqualToString:@"tr"])
+            title = @"Destek listesi";
     }
     return title;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    CompanyCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     Company *company = [[Company alloc] init];
     NSPredicate *predicate = [[NSPredicate alloc] init];
@@ -210,9 +243,12 @@
         NSArray *filteredArray = [self.companyArray filteredArrayUsingPredicate:predicate];
         company = filteredArray[indexPath.row];
     
-    cell.textLabel.text = company.isim;
+    cell.nameLabel.text = company.isim;
+    cell.nameLabel.font = [self tableViewFonts];
+    cell.listLabel.text = company.whichlist;
+    cell.listLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:12.0];
+    cell.listLabel.textColor = ([company.whichlist isEqualToString:@"boykot"]) ? [UIColor redColor] : [UIColor colorWithRed:186/255.0f green:245/255.0f blue:121/255.0f alpha:1.0f];
     
-    cell.textLabel.font = [self tableViewFonts];
     return cell;
 
 }
@@ -220,7 +256,7 @@
 {
     UIFontDescriptor *userFont = [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleBody];
     float userFontSize = [userFont pointSize];
-    UIFont *font = [UIFont fontWithName:@"ArialHebrew-Bold" size:userFontSize];
+    UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Light" size:userFontSize];
     
     return font;
     
@@ -230,6 +266,8 @@
     // Return NO if you do not want the specified item to be editable.
     return NO;
 }
+
+#pragma mark - Search Controller
 -(void)presentSearchController:(UISearchController *)searchController
 {
     [self.searchController.searchBar becomeFirstResponder];
@@ -260,6 +298,10 @@
     self.searchResultsController.filteredArray = searchResults;
     
     [self.searchResultsController.tableView reloadData];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
 }
 
 #pragma mark - state restoration

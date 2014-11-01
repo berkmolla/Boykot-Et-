@@ -9,6 +9,7 @@
 #import "Company.h"
 #import "SearchResultsTableViewController.h"
 #import "DetailViewController.h"
+#import "CompanyCell.h"
 
 @interface SearchResultsTableViewController ()
 
@@ -25,7 +26,10 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cellID"];
+    UINib *nib = [UINib nibWithNibName:@"CompanyCell" bundle:nil];
+    
+    // Register the nib
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"cellID"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,14 +51,31 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cellID" forIndexPath:indexPath];
+    CompanyCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cellID" forIndexPath:indexPath];
     
     Company *company = self.filteredArray[indexPath.row];
     assert(cell != nil);
     
-    cell.textLabel.text = company.isim;
+    cell.nameLabel.text = company.isim;
+    cell.listLabel.text = company.whichlist;
+    
+    cell.nameLabel.font = [self tableViewFonts];
+    cell.listLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:12.0];
+    cell.listLabel.textColor = ([company.whichlist isEqualToString:@"boykot"]) ? [UIColor redColor] : [UIColor colorWithRed:186/255.0f green:245/255.0f blue:121/255.0f alpha:1.0f];
+    
+    
     
     return cell;
+}
+
+-(UIFont *)tableViewFonts
+{
+    UIFontDescriptor *userFont = [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleBody];
+    float userFontSize = [userFont pointSize];
+    UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Light" size:userFontSize];
+    
+    return font;
+    
 }
 
 -(instancetype)init

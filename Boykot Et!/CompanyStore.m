@@ -10,11 +10,9 @@
 #import "Company.h"
 #import "DataCollector.h"
 
-
 @interface CompanyStore() <NSXMLParserDelegate>
 {
     NSXMLParser *parser;
-    
 }
 
 @property (nonatomic) NSMutableArray *privateItems;
@@ -48,21 +46,16 @@
     if (self) {
         
         NSString *path = [self itemArchivePath];
-        
         _privateItems = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
         
         if (!_privateItems) {
             _privateItems = [[NSMutableArray alloc] init];
+            [self doParsing];
             
-            DataCollector *dataCollector = [[DataCollector alloc] init];
-            
-            NSArray *boykotArray = [[NSArray alloc] initWithArray:[dataCollector parseXMLFile:@"boykot"]];
-            NSArray *destekArray = [[NSArray alloc] initWithArray:[dataCollector parseXMLFile:@"destek"]];
-            
-            _privateItems = [boykotArray mutableCopy];
-            _privateItems = [[_privateItems arrayByAddingObjectsFromArray:destekArray] mutableCopy];
+            NSLog(@"had to parse");
         }
-    
+        NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+        [notificationCenter addObserver:self selector:@selector(doParsing) name:NSUserDefaultsDidChangeNotification object:nil];
     }
     
     return self;
@@ -87,8 +80,24 @@
     NSString *path = [self itemArchivePath];
     
     BOOL success = [NSKeyedArchiver archiveRootObject:self.privateItems toFile:path];
+    NSLog(@"Saved user data");
+
     
     return success;
+}
+
+-(void)doParsing
+{
+    DataCollector *dataCollector = [[DataCollector alloc] init];
+    
+        NSArray *boykotArray = [[NSArray alloc] initWithArray:[dataCollector parseXMLFile:@"boykot"]];
+        NSArray *destekArray = [[NSArray alloc] initWithArray:[dataCollector parseXMLFile:@"destek"]];
+    
+        [_privateItems removeAllObjects];
+        
+        _privateItems = [boykotArray mutableCopy];
+        _privateItems = [[_privateItems arrayByAddingObjectsFromArray:destekArray] mutableCopy];
+
 }
 
 

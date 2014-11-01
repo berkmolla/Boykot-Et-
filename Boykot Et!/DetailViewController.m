@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "Localizer.h"
 
 @interface DetailViewController () <UIViewControllerRestoration>
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -33,7 +34,13 @@
         // If there is no company selected, load the empty company XIB and set label
         NSArray *xib = [[NSBundle mainBundle] loadNibNamed:@"CompanyDetails" owner:self options:nil];
               self.view = [xib objectAtIndex:0];
-        self.detailDescriptionLabel.text = NSLocalizedString(@"No company selected", @"The detail view controller when no company is selected");
+        
+        NSString *language = [[Localizer sharedInstance] currentLanguage];
+        
+        if ([language isEqualToString:@"en"])
+            self.detailDescriptionLabel.text = @"No company selected";
+        else if ([language isEqualToString:@"tr"])
+            self.detailDescriptionLabel.text = @"Şirket seçilmedi";
     }
     if (self.company) {
         
@@ -41,7 +48,7 @@
         if ([self.company.whichlist isEqualToString:@"boykot"])
             self.view.backgroundColor = [UIColor redColor];
         else
-            self.view.backgroundColor = [UIColor greenColor];
+            self.view.backgroundColor = [UIColor colorWithRed:186/255.0f green:245/255.0f blue:121/255.0f alpha:1.0f];
         
         UIColor * color = [UIColor colorWithRed:255/255.0f green:248/255.0f blue:192/255.0f alpha:1.0f];
         UIView *labelBackgroundView = [self.view.subviews objectAtIndex:0];
@@ -49,13 +56,14 @@
         
         
         [self setFontsandLabels];
-        self.title = NSLocalizedString(@"Company Details", @"Company details title");
         
     }
     
     UIButton *infoButtonItem = [UIButton buttonWithType:UIButtonTypeInfoLight];
     [infoButtonItem addTarget:self action:@selector(goToInfoPage) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButtonItem];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setFontsandLabels) name:NSUserDefaultsDidChangeNotification object:nil];
     
     
 }
@@ -83,9 +91,6 @@
 {
     [super viewWillAppear:animated];
     [self configureView];
-
-    
-
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -108,10 +113,23 @@
     
     
     // Set labels
-    self.nameLabel.text = NSLocalizedString(@"Name:", @"nameLabel in Detail View Controller");
-    self.ownerLabel.text = NSLocalizedString(@"Owner:", @"ownerLabel in Detail View Controller");
-    self.sectorLabel.text = NSLocalizedString(@"Sector:", @"sectorLabel in Detail View Controller");
-    self.responsibilityLabel.text = NSLocalizedString(@"Responsibility:", @"responsibilityLabel in Detail View Controller");
+    NSString *language = [[Localizer sharedInstance] currentLanguage];
+    
+    if ([language isEqualToString:@"en"]) {
+        self.nameLabel.text = @"Name:";
+        self.ownerLabel.text = @"Owner:";
+        self.sectorLabel.text = @"Sector:";
+        self.responsibilityLabel.text = @"Responsibility:";
+        
+        self.title = @"Company Details";
+    }
+    else if ([language isEqualToString:@"tr"]) {
+        self.nameLabel.text = @"İsim:";
+        self.ownerLabel.text = @"Sahibi:";
+        self.sectorLabel.text = @"İş Alanı:";
+        self.responsibilityLabel.text = @"Sorumluluk:";
+        self.title = @"Şirket bilgileri";
+    }
     
     self.companyName.text = self.company.isim;
     self.companyOwner.text = self.company.sahibi;
@@ -135,6 +153,9 @@
     if (self) {
         self.restorationIdentifier = NSStringFromClass([self class]);
         self.restorationClass = [self class];
+        
+        NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+        [center addObserver:self selector:@selector(configureView) name:NSUserDefaultsDidChangeNotification object:nil];
     }
     
     return self;
